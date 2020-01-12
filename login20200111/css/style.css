@@ -1,0 +1,92 @@
+@import url(//db.onlinewebfonts.com/c/b8c332e7b686ba28daebf6524c66aeec?family=PMingLiU);
+
+*{
+    padding:0;
+    margin:0;
+}
+
+.icon {
+    width: 2em;
+    height: 2em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+
+
+html{
+    height:100%;
+}
+
+body{
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    
+
+    /* height: 100%; */
+    padding-top: 5%;
+
+    /* background-color: #000; */
+    background: -webkit-linear-gradient(left bottom, #6b8584,#e2dad3);
+
+}
+
+.card-container{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.card-container .image-wrapper{
+    font-size: 0px;
+}
+
+.card-container .image-wrapper img{
+    width:600px;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-container .title-wrapper{
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
+}
+
+.card-container .title-wrapper .title{
+    text-align: center;
+    padding: 50px 0 30px 0;
+    font-family:  PMingLiu, mingliu, "細明體_HKSCS-ExtB";
+}
+
+.card-container .title-wrapper .subtitle{
+    text-align: center;
+    font-size: 20px;
+    padding: 0 0 50px 0;
+    font-weight: bold;
+    font-family:  PMingLiu, mingliu, "細明體_HKSCS-ExtB";
+}
+
+.card-container .title-wrapper hr{
+    border: 0;
+    height: 1px;
+    background-color: #000;
+    margin: 0 80px;
+}
+
+.card-container .title-wrapper .icon-btns {
+    padding: 50px, 0, 60px, 0
+}
+
+.card-container .title-wrapper .icon-btns ul{
+    list-style:none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.card-container .title-wrapper .icon-btns ul li{
+    display: inline-block;
+    /* border: 1px solid #000; */
+    padding: 10px;
+    border-radius: 50px;
+}
+
+
+
