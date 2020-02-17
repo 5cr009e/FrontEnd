@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var fs = require('fs')
 var path = require('path');
 
@@ -15,8 +16,8 @@ function createDir(fname){
     }
 }
 
-function createFile(root_dir, fname){
-    fs.readFile(path.join(__dirname, fname), 'utf8', function(err, contents) {
+function createFile(root_dir, tempalte_root, fname){
+    fs.readFile(path.join(__dirname, tempalte_root, fname), 'utf8', function(err, contents) {
         if(err){
             return console.log(err);
         }
@@ -29,14 +30,30 @@ function createFile(root_dir, fname){
     });
 }
 
+// function load_json(file){
+//     
+//     return obj
+// }
+
+
 function main(){
-    const args = process.argv;
-    root_dir = args[2];
+    const config = require(path.join(__dirname, "config.json"));
+    var argv = require('yargs')
+        .default('template', function randomValue() {
+            return "default";
+          }).argv
+
+    if(config[argv.template] === undefined){
+        console.log(`Loading template error: no such template name.\nAvailable names:\n\n${Object.keys(config)}\n`);
+        process.exit()
+    }
+    console.log(`Trying to initialize with template ${argv.template}...\nDescription:\n${config[argv.template].description}\n`);
+    let root_dir = argv.root;
     createDir(root_dir);
-    const dirs = ["css", "img", "js"]
+    let dirs = ["css", "img", "js"]
     dirs.forEach(dir => createDir(path.join(root_dir,dir)))
-    const files = ["index.html","css/style.css","js/index.js"]
-    files.forEach(fn => createFile(root_dir, fn))
+    let files = ["index.html","css/style.css","js/index.js"]
+    files.forEach(fname => createFile(root_dir, config[argv.template].template_root, fname))
 }
 
 main()
