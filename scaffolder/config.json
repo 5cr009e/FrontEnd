@@ -1,6 +1,0 @@
-{
-    "default": {
-        "template_root": "templates/defaults",
-        "description": "default template with index.html, css/style.css, img and js/index.js"
-    }
-}
